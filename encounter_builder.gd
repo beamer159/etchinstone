@@ -1,19 +1,19 @@
 class_name EncounterBuilder
 extends Object
 
-static func build_enemies() -> Array:
-	return [[
-		_build_enemy_1_1(),
-		_build_enemy_1_2(),
-		_build_enemy_1_3(),
-		_build_enemy_1_4()]]
-
-static func build_journeys() -> Array:
-	return [[
-		_build_journey_1_1(),
-		_build_journey_1_2(),
-		_build_journey_1_3(),
-		_build_journey_1_4()]]
+static func build_region_1() -> Region:
+	return Region.create(
+		"Jade Mountains",
+		[
+			_build_enemy_1_1(),
+			_build_enemy_1_2(),
+			_build_enemy_1_3(),
+			_build_enemy_1_4()],
+		[
+			_build_journey_1_1(),
+			_build_journey_1_2(),
+			_build_journey_1_3(),
+			_build_journey_1_4()])
 
 static func _build_enemy_1_1() -> Enemy:
 	return Enemy.create(
