@@ -5,15 +5,10 @@ var name: String
 var enemies: Array[Enemy]
 var journeys: Array[Journey]
 
-static func create(
-		p_name: String,
-		p_enemies: Array[Enemy],
-		p_journeys: Array[Journey]) -> Region:
-	var region := Region.new()
-	region.name = p_name
-	region.enemies = p_enemies
-	region.journeys = p_journeys
-	return region
+func _init(p_name: String, p_enemies: Array[Enemy], p_journeys: Array[Journey]):
+	name = p_name
+	enemies = p_enemies
+	journeys = p_journeys
 
 func get_encounter(reference: PowerLevel):
 	var encounter = reference.encounter

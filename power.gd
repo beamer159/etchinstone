@@ -10,13 +10,11 @@ var power_level : PowerLevel:
 	get:
 		return levels[level - 1]
 
-static func create(
+func _init(
 		p_name: String,
 		p_element: ElementValue.Element,
-		p_levels: Array[PowerLevel]) -> Power:
-	var power := Power.new()
-	power.name = p_name
-	power.element = p_element
-	power.levels = p_levels
-	power.level = 2
-	return power
+		p_levels: Array[PowerLevel]):
+	name = p_name
+	element = p_element
+	levels = p_levels
+	level = 2

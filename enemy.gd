@@ -15,18 +15,16 @@ var armor: ElementValue
 var experience: int
 var ability: Array[Ability]
 
-static func create(
+func _init(
 		p_health: int,
 		p_initiative: int,
 		p_attack: ElementValue,
 		p_armor: ElementValue,
 		p_experience: int,
-		p_ability: Array[Ability]) -> Enemy:
-	var enemy := Enemy.new()
-	enemy.health = p_health
-	enemy.initiative = p_initiative
-	enemy.attack = p_attack
-	enemy.armor = p_armor
-	enemy.experience = p_experience
-	enemy.ability = p_ability
-	return enemy
+		p_ability: Array[Ability]):
+	health = p_health
+	initiative = p_initiative
+	attack = p_attack
+	armor = p_armor
+	experience = p_experience
+	ability = p_ability
