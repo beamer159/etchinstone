@@ -15,3 +15,7 @@ var value: int
 func _init(p_element: Element, p_value: int):
 	element = p_element
 	value = p_value
+
+
+func clone() -> ElementValue:
+	return ElementValue.new(element, value)

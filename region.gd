@@ -10,9 +10,9 @@ func _init(p_name: String, p_enemies: Array[Enemy], p_journeys: Array[Journey]):
 	enemies = p_enemies
 	journeys = p_journeys
 
-func get_encounter(reference: PowerLevel):
-	var encounter = reference.encounter
-	if encounter.type == PowerLevel.Encounter.Type.ENEMY:
+func get_encounter(ref: Power) -> Encounter:
+	var encounter = ref.encounter
+	if encounter.type == Power.EncounterRef.Type.ENEMY:
 		return enemies[encounter.value - 1]
 	else:
 		return journeys[encounter.value - 1]

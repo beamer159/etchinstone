@@ -1,7 +1,7 @@
 class_name DeckBuilder
 extends Object
 
-static func build_deck() -> Array[Power]:
+static func build_deck() -> Array[Level]:
 	return [
 		_build_power_1(),
 		_build_power_2(),
@@ -9,330 +9,370 @@ static func build_deck() -> Array[Power]:
 		_build_power_4(),
 		_build_power_5()]
 
-static func _build_power_1() -> Power:
+static func _build_power_1() -> Level:
+	var name = "Determined March"
+	var element = ElementValue.Element.GRAY
 	return _build_power(
-		"Determined March",
-		ElementValue.Element.GRAY,
-		PowerLevel.new(
+		Power.new(
+			name,
+			element,
 			2,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			2,
 			2,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 3)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.GRAY, 5)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				4,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			3,
 			ElementValue.new(ElementValue.Element.NONE, 3),
 			3,
 			3,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 4)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.GRAY, 7)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				4,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			5,
 			ElementValue.new(ElementValue.Element.NONE, 3),
 			4,
 			5,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 5)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.GRAY, 9)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				2,
-				PowerLevel.Encounter.Circumstance.AMBUSH)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.AMBUSH)),
+		Power.new(
+			name,
+			element,
 			0,
 			ElementValue.new(ElementValue.Element.GRAY, 4),
 			5,
 			6,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 5)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.GRAY, 12)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				2,
-				PowerLevel.Encounter.Circumstance.NONE)))
+				Power.EncounterRef.Circumstance.NONE)))
 
-static func _build_power_2() -> Power:
+static func _build_power_2() -> Level:
+	var name = "Fleet Footed"
+	var element = ElementValue.Element.GRAY
 	return _build_power(
-		"Fleet Footed",
-		ElementValue.Element.GRAY,
-		PowerLevel.new(
+		Power.new(
+			name,
+			element,
 			2,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			5,
 			1,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 3)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.YELLOW, 5)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				1,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			4,
 			ElementValue.new(ElementValue.Element.NONE, 3),
 			5,
 			2,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 5)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.YELLOW, 9)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				4,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			6,
 			ElementValue.new(ElementValue.Element.YELLOW, 3),
 			6,
 			4,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 6)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.YELLOW, 11)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				1,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			0,
 			ElementValue.new(ElementValue.Element.YELLOW, 4),
 			7,
 			5,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 8)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.YELLOW, 14)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				2,
-				PowerLevel.Encounter.Circumstance.NIGHT_TRAVEL)))
+				Power.EncounterRef.Circumstance.NIGHT_TRAVEL)))
 
-static func _build_power_3() -> Power:
+static func _build_power_3() -> Level:
+	var name = "Rain of Blood"
+	var element = ElementValue.Element.GRAY
 	return _build_power(
-		"Rain of Blood",
-		ElementValue.Element.GRAY,
-		PowerLevel.new(
+		Power.new(
+			name,
+			element,
 			1,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			2,
 			1,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 3)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.RED, 6)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				4,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			3,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			3,
 			1,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 5)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.RED, 8)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				2,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			4,
 			ElementValue.new(ElementValue.Element.NONE, 3),
 			3,
 			2,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 6)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.RED, 11)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				4,
-				PowerLevel.Encounter.Circumstance.AMBUSH)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.AMBUSH)),
+		Power.new(
+			name,
+			element,
 			0,
 			ElementValue.new(ElementValue.Element.NONE, 5),
 			4,
 			3,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 7)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.ATTACK,
+			Action.new(
+				Action.Type.ATTACK,
 				ElementValue.new(ElementValue.Element.RED, 14)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				1,
-				PowerLevel.Encounter.Circumstance.NONE)))
+				Power.EncounterRef.Circumstance.NONE)))
 
-static func _build_power_4() -> Power:
+static func _build_power_4() -> Level:
+	var name = "River Swiftness"
+	var element = ElementValue.Element.GRAY
 	return _build_power(
-		"River Swiftness",
-		ElementValue.Element.GRAY,
-		PowerLevel.new(
+		Power.new(
+			name,
+			element,
 			2,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			5,
 			1,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 2)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.BLUE, 4)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				1,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			4,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			6,
 			2,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 3)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.BLUE, 6)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				2,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			5,
 			ElementValue.new(ElementValue.Element.NONE, 5),
 			8,
 			3,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 5)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.BLUE, 9)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				3,
-				PowerLevel.Encounter.Circumstance.STORM)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.STORM)),
+		Power.new(
+			name,
+			element,
 			0,
 			ElementValue.new(ElementValue.Element.BLUE, 5),
 			9,
 			5,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.NONE, 8)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE,
+			Action.new(
+				Action.Type.MOVE,
 				ElementValue.new(ElementValue.Element.BLUE, 12)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.JOURNEY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.JOURNEY,
 				4,
-				PowerLevel.Encounter.Circumstance.NONE)))
+				Power.EncounterRef.Circumstance.NONE)))
 
-static func _build_power_5() -> Power:
+static func _build_power_5() -> Level:
+	var name = "Adapt"
+	var element = ElementValue.Element.RED
 	return _build_power(
-		"",
-		ElementValue.Element.RED,
-		PowerLevel.new(
+		Power.new(
+			name,
+			element,
 			2,
 			ElementValue.new(ElementValue.Element.NONE, 1),
 			2,
 			2,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 2)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.GRAY, 3)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				2,
-				PowerLevel.Encounter.Circumstance.AMBUSH)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.AMBUSH)),
+		Power.new(
+			name,
+			element,
 			3,
 			ElementValue.new(ElementValue.Element.NONE, 2),
 			3,
 			3,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 3)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.GRAY, 5)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				3,
-				PowerLevel.Encounter.Circumstance.NONE)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.NONE)),
+		Power.new(
+			name,
+			element,
 			4,
 			ElementValue.new(ElementValue.Element.NONE, 3),
 			4,
 			4,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 4)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.GRAY, 7)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				1,
-				PowerLevel.Encounter.Circumstance.STORM)),
-		PowerLevel.new(
+				Power.EncounterRef.Circumstance.STORM)),
+		Power.new(
+			name,
+			element,
 			0,
 			ElementValue.new(ElementValue.Element.GRAY, 3),
 			4,
 			5,
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.NONE, 6)),
-			PowerLevel.Action.new(
-				PowerLevel.Action.Type.MOVE_ATTACK,
+			Action.new(
+				Action.Type.MOVE_ATTACK,
 				ElementValue.new(ElementValue.Element.GRAY, 9)),
-			PowerLevel.Encounter.new(
-				PowerLevel.Encounter.Type.ENEMY,
+			Power.EncounterRef.new(
+				Power.EncounterRef.Type.ENEMY,
 				2,
-				PowerLevel.Encounter.Circumstance.NONE)))
+				Power.EncounterRef.Circumstance.NONE)))
 
-static func _build_power(name: String, element: ElementValue.Element, level1: PowerLevel, level2: PowerLevel, level3: PowerLevel, level4: PowerLevel) -> Power:
-	return Power.new(name, element, [level1, level2, level3, level4])
+static func _build_power(level1: Power, level2: Power, level3: Power, level4: Power) -> Level:
+	return Level.new([level1, level2, level3, level4])
