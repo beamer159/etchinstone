@@ -8,7 +8,7 @@ var discard: Array[Level] = []
 
 
 func _init():
-	powers = DeckBuilder.build_deck()
+	powers = PowerBuilder.build_powers()
 	powers.shuffle()
 
 

@@ -27,6 +27,16 @@ class EncounterRef:
 		type = p_type
 		value = p_value
 		circumstance = p_circumstance
+	
+	
+	func _to_string() -> String:
+		return str(
+			Type.keys()[type],
+			" ",
+			value,
+			" (",
+			Circumstance.keys()[circumstance],
+			")")
 
 
 var name: String
@@ -71,3 +81,18 @@ func soak(attack_element: ElementValue.Element) -> int:
 		return armor.value
 	
 	return armor.value * 2 if armor.element == attack_element else armor.element
+
+
+func _to_string() -> String:
+	return str(
+		"Name: ", name,
+		"\nLevel: ", level,
+		"\nElement: ", ElementValue.Element.keys()[element],
+		"\nUpgrade Cost: ", upgrade_cost,
+		"\nArmor: ", armor,
+		"\nInitiative: ", initiative,
+		"\nBoost: ", boost,
+		"\nNeutral Action: ", neutral_action,
+		"\nEther Action: ", ether_action,
+		"\nEncounter: ", encounter
+	)

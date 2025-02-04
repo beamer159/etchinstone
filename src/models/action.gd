@@ -27,3 +27,7 @@ func attack_value(armor: ElementValue) -> int:
 
 func move_value() -> int:
 	return 1 if type == Type.ATTACK else value.value
+
+
+func _to_string() -> String:
+	return str(value, " ", Type.keys()[type])

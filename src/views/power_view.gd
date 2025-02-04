@@ -15,10 +15,10 @@ func _create(p_power: Power):
 	power = p_power
 	var file = FileAccess.get_file_as_string("images/powers.json")
 	var dic = JSON.parse_string(file)
-	var position = dic[power.id]
+	var coordinates = dic[power.id]
 	var sheet: Texture2D = texture.atlas
-	var w = sheet.get_width() / 8
-	var h = sheet.get_height() / 8
-	texture.region = Rect2(position.x * w, position.y * h, w, h)
-	print(w)
-	print(h)
+	@warning_ignore("integer_division")
+	var width = sheet.get_width() / 8
+	@warning_ignore("integer_division")
+	var height = sheet.get_height() / 8
+	texture.region = Rect2(coordinates.x * width, coordinates.y * height, width, height)

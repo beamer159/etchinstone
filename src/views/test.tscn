@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bblhi42hv75xa"]
+
+[ext_resource type="Script" path="res://src/views/test.gd" id="1_nvfrl"]
+
+[node name="Test" type="VBoxContainer"]
+script = ExtResource("1_nvfrl")
+
+[node name="Info" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 64
