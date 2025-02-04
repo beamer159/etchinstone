@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://betsvosq307p6"]
+
+[ext_resource type="Script" path="res://src/views/game_view.gd" id="1_50wrj"]
+
+[node name="GameView" type="Node"]
+script = ExtResource("1_50wrj")

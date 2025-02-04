@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://t4xbf1v17034"]
+
+[ext_resource type="Texture2D" uid="uid://4iopkwjwltu7" path="res://images/powers.png" id="1_8ku3k"]
+[ext_resource type="Script" path="res://src/views/power_view.gd" id="2_mljpk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r7fkl"]
+atlas = ExtResource("1_8ku3k")
+
+[node name="PowerView" type="TextureRect"]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = SubResource("AtlasTexture_r7fkl")
+script = ExtResource("2_mljpk")

@@ -1,0 +1,258 @@
+{
+    "blueDestruction1": {
+        "x": 0,
+        "y": 0
+    },
+    "blueDestruction2": {
+        "x": 3,
+        "y": 1
+    },
+    "blueDestruction3": {
+        "x": 0,
+        "y": 2
+    },
+    "blueDestruction4": {
+        "x": 3,
+        "y": 3
+    },
+    "blueSword Of Light1": {
+        "x": 1,
+        "y": 0
+    },
+    "blueSword Of Light2": {
+        "x": 2,
+        "y": 1
+    },
+    "blueSword Of Light3": {
+        "x": 1,
+        "y": 2
+    },
+    "blueSword Of Light4": {
+        "x": 2,
+        "y": 3
+    },
+    "blueBrute Force1": {
+        "x": 2,
+        "y": 0
+    },
+    "blueBrute Force2": {
+        "x": 1,
+        "y": 1
+    },
+    "blueBrute Force3": {
+        "x": 2,
+        "y": 2
+    },
+    "blueBrute Force4": {
+        "x": 1,
+        "y": 3
+    },
+    "blueIce Wall1": {
+        "x": 3,
+        "y": 0
+    },
+    "blueIce Wall2": {
+        "x": 0,
+        "y": 1
+    },
+    "blueIce Wall3": {
+        "x": 3,
+        "y": 2
+    },
+    "blueIce Wall4": {
+        "x": 0,
+        "y": 3
+    },
+    "yellowRain Of Blood1": {
+        "x": 4,
+        "y": 0
+    },
+    "yellowRain Of Blood2": {
+        "x": 7,
+        "y": 1
+    },
+    "yellowRain Of Blood3": {
+        "x": 4,
+        "y": 2
+    },
+    "yellowRain Of Blood4": {
+        "x": 7,
+        "y": 3
+    },
+    "yellowFleet Footed1": {
+        "x": 5,
+        "y": 0
+    },
+    "yellowFleet Footed2": {
+        "x": 6,
+        "y": 1
+    },
+    "yellowFleet Footed3": {
+        "x": 5,
+        "y": 2
+    },
+    "yellowFleet Footed4": {
+        "x": 6,
+        "y": 3
+    },
+    "yellowAdapt1": {
+        "x": 6,
+        "y": 0
+    },
+    "yellowAdapt2": {
+        "x": 5,
+        "y": 1
+    },
+    "yellowAdapt3": {
+        "x": 6,
+        "y": 2
+    },
+    "yellowAdapt4": {
+        "x": 5,
+        "y": 3
+    },
+    "yellowRiver Swiftness1": {
+        "x": 7,
+        "y": 0
+    },
+    "yellowRiver Swiftness2": {
+        "x": 4,
+        "y": 1
+    },
+    "yellowRiver Swiftness3": {
+        "x": 7,
+        "y": 2
+    },
+    "yellowRiver Swiftness4": {
+        "x": 4,
+        "y": 3
+    },
+    "redBurning Bridges1": {
+        "x": 0,
+        "y": 4
+    },
+    "redBurning Bridges2": {
+        "x": 3,
+        "y": 5
+    },
+    "redBurning Bridges3": {
+        "x": 0,
+        "y": 6
+    },
+    "redBurning Bridges4": {
+        "x": 3,
+        "y": 7
+    },
+    "redMotivated Flight1": {
+        "x": 1,
+        "y": 4
+    },
+    "redMotivated Flight2": {
+        "x": 2,
+        "y": 5
+    },
+    "redMotivated Flight3": {
+        "x": 1,
+        "y": 6
+    },
+    "redMotivated Flight4": {
+        "x": 2,
+        "y": 7
+    },
+    "redAdapt1": {
+        "x": 2,
+        "y": 4
+    },
+    "redAdapt2": {
+        "x": 1,
+        "y": 5
+    },
+    "redAdapt3": {
+        "x": 2,
+        "y": 6
+    },
+    "redAdapt4": {
+        "x": 1,
+        "y": 7
+    },
+    "redIce Wall1": {
+        "x": 3,
+        "y": 4
+    },
+    "redIce Wall2": {
+        "x": 0,
+        "y": 5
+    },
+    "redIce Wall3": {
+        "x": 3,
+        "y": 6
+    },
+    "redIce Wall4": {
+        "x": 0,
+        "y": 7
+    },
+    "grayRain Of Blood1": {
+        "x": 4,
+        "y": 4
+    },
+    "grayRain Of Blood2": {
+        "x": 7,
+        "y": 5
+    },
+    "grayRain Of Blood3": {
+        "x": 4,
+        "y": 6
+    },
+    "grayRain Of Blood4": {
+        "x": 7,
+        "y": 7
+    },
+    "grayFleet Footed1": {
+        "x": 5,
+        "y": 4
+    },
+    "grayFleet Footed2": {
+        "x": 6,
+        "y": 5
+    },
+    "grayFleet Footed3": {
+        "x": 5,
+        "y": 6
+    },
+    "grayFleet Footed4": {
+        "x": 6,
+        "y": 7
+    },
+    "grayDetermined March1": {
+        "x": 6,
+        "y": 4
+    },
+    "grayDetermined March2": {
+        "x": 5,
+        "y": 5
+    },
+    "grayDetermined March3": {
+        "x": 6,
+        "y": 6
+    },
+    "grayDetermined March4": {
+        "x": 5,
+        "y": 7
+    },
+    "grayRiver Swiftness1": {
+        "x": 7,
+        "y": 4
+    },
+    "grayRiver Swiftness2": {
+        "x": 4,
+        "y": 5
+    },
+    "grayRiver Swiftness3": {
+        "x": 7,
+        "y": 6
+    },
+    "grayRiver Swiftness4": {
+        "x": 4,
+        "y": 7
+    }
+}
