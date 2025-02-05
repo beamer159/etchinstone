@@ -1,10 +1,10 @@
-class_name Game
-extends RefCounted
+class_name Game extends RefCounted
 
 
 var player := Player.new()
 var powers: Array[Level]
 var discard: Array[Level] = []
+var encounter: Encounter
 
 
 func _init():
@@ -13,9 +13,9 @@ func _init():
 
 
 func region_era():
-	var regions = Level.new([EncounterBuilder.build_region_1()])
+	var regions = EncounterBuilder.build_regions()
 	while regions.level != regions.max_level:
-		resolve_region(regions.leveled())
+		await resolve_region(regions.leveled())
 		regions.level += 1
 	await resolve_region(regions.leveled())
 
@@ -33,7 +33,7 @@ func resolve_region(region: Region):
 func resolve_round(hand: Array[Level], region: Region):
 	for __ in 4 - hand.size():
 		hand.append(powers.pop_back())
-	var encounter: Encounter = region.get_encounter(powers.back().leveled())
+	encounter = region.get_encounter(powers.back().leveled())
 	var action_set = await player.create_action_set(hand)
 	var outcome: Outcome = encounter.resolve(action_set)
 	var to_downgrade: Array[Level]

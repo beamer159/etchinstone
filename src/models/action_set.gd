@@ -1,5 +1,4 @@
-class_name ActionSet
-extends RefCounted
+class_name ActionSet extends RefCounted
 
 
 enum BoostTarget {

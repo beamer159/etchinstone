@@ -1,8 +1,10 @@
-class_name PowerView
-extends TextureRect
+class_name PowerView extends SpritesheetView
 
 
-var power: Power
+var power: Power:
+	set(value):
+		power = value
+		set_region(SpritesheetLookup.get_power_coordinates(power))
 
 
 static func create(p_power: Power) -> PowerView:
@@ -11,14 +13,6 @@ static func create(p_power: Power) -> PowerView:
 	return power_view
 
 
-func _create(p_power: Power):
+func _create(p_power: Power) -> void:
+	sheet_size = Vector2i(8, 8)
 	power = p_power
-	var file = FileAccess.get_file_as_string("images/powers.json")
-	var dic = JSON.parse_string(file)
-	var coordinates = dic[power.id]
-	var sheet: Texture2D = texture.atlas
-	@warning_ignore("integer_division")
-	var width = sheet.get_width() / 8
-	@warning_ignore("integer_division")
-	var height = sheet.get_height() / 8
-	texture.region = Rect2(coordinates.x * width, coordinates.y * height, width, height)

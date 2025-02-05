@@ -1,5 +1,4 @@
-class_name Enemy
-extends Encounter
+class_name Enemy extends Encounter
 
 
 enum Ability {
@@ -13,16 +12,18 @@ enum Ability {
 var health: int
 var initiative: int
 var attack: ElementValue
-var armor: ElementValue
+var armor: Array[ElementValue]
 var ability: Array[Ability]
 
 func _init(
+		p_id,
 		p_health: int,
 		p_initiative: int,
 		p_attack: ElementValue,
-		p_armor: ElementValue,
+		p_armor: Array[ElementValue],
 		p_experience: int,
-		p_ability: Array[Ability]):
+		p_ability: Array[Ability]) -> void:
+	id = p_id
 	health = p_health
 	initiative = p_initiative
 	attack = p_attack

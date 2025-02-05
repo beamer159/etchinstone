@@ -1,5 +1,4 @@
-class_name ElementValue
-extends RefCounted
+class_name ElementValue extends RefCounted
 
 enum Element {
 	NONE,

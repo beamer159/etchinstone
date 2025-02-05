@@ -1,5 +1,4 @@
-class_name Player
-extends RefCounted
+class_name Player extends RefCounted
 
 
 signal sig1

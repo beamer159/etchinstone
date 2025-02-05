@@ -1,5 +1,4 @@
-class_name PowerBuilder
-extends RefCounted
+class_name PowerBuilder extends RefCounted
 
 
 var upgrade_cost: int

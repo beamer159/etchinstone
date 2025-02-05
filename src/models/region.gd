@@ -1,5 +1,4 @@
-class_name Region
-extends RefCounted
+class_name Region extends RefCounted
 
 var name: String
 var enemies: Array[Enemy]

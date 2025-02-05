@@ -1,5 +1,4 @@
-class_name Power
-extends RefCounted
+class_name Power extends RefCounted
 
 
 class EncounterRef:

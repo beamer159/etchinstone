@@ -1,5 +1,4 @@
-class_name Outcome
-extends RefCounted
+class_name Outcome extends RefCounted
 
 
 var experience := 0

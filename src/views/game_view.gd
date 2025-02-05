@@ -1,4 +1,4 @@
-extends Node
+extends MarginContainer
 
 
 var game := Game.new()
@@ -10,6 +10,7 @@ func _ready() -> void:
 
 
 func _on_player_action_set(powers: Array[Level]):
-	var power_view = PowerView.create(powers[0].leveled())
-	print(power_view.power.to_string())
-	add_child(power_view)
+	for power in powers:
+		var power_view = PowerView.create(power.leveled())
+		%Hand.add_child(power_view)
+	%Enemy.enemy = game.encounter

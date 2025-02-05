@@ -1,5 +1,4 @@
-class_name Journey
-extends Encounter
+class_name Journey extends Encounter
 
 enum Peril {
 	STEEP,
@@ -11,10 +10,12 @@ var time_penalty: int
 var peril: Array[Peril]
 
 func _init(
+		p_id: String,
 		p_move_points: ElementValue,
 		p_time_penalty: int,
 		p_experience: int,
-		p_peril: Array[Peril]):
+		p_peril: Array[Peril]) -> void:
+	id = p_id
 	move_points = p_move_points
 	time_penalty = p_time_penalty
 	experience = p_experience

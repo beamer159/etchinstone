@@ -1,6 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://betsvosq307p6"]
+[gd_scene load_steps=3 format=3 uid="uid://betsvosq307p6"]
 
-[ext_resource type="Script" path="res://src/views/game_view.gd" id="1_50wrj"]
+[ext_resource type="Script" path="res://src/views/game_view.gd" id="1_nskcf"]
+[ext_resource type="PackedScene" uid="uid://bfgp0kab2n7s3" path="res://src/views/enemy_view.tscn" id="2_yct4r"]
 
-[node name="GameView" type="Node"]
-script = ExtResource("1_50wrj")
+[node name="GameView" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nskcf")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Enemy" parent="VBoxContainer" instance=ExtResource("2_yct4r")]
+unique_name_in_owner = true
+layout_mode = 2
+sheet_size = Vector2i(4, 4)
+
+[node name="Hand" type="GridContainer" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+columns = 2

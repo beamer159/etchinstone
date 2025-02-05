@@ -1,5 +1,4 @@
-class_name Level
-extends RefCounted
+class_name Level extends RefCounted
 
 
 var _items: Array[Variant]:

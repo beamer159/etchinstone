@@ -1,7 +1,7 @@
-class_name Encounter
-extends RefCounted
+class_name Encounter extends RefCounted
 
 
+var id: String
 var experience: int
 
 
