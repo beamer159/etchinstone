@@ -25,17 +25,20 @@ func _init(
 func resolve(action_set: ActionSet) -> Outcome:
 	var outcome := Outcome.new()
 	
-	var move_value = action_set.action.move_value()
+	outcome.action_value = action_set.move_value(move_points.element)
 	
 	@warning_ignore("integer_division")
 	var half_move_points := (move_points.value + 1) / 2
 	
-	if move_value >= move_points.value:
+	if outcome.action_value >= move_points.value:
+		outcome.result = Outcome.Result.COMPLETE_VICTORY
 		outcome.experience += experience
-	elif move_value >= half_move_points:
+	elif outcome.action_value >= half_move_points:
+		outcome.result = Outcome.Result.NARROW_VICTORY
 		outcome.experience += experience
 		outcome.time += time_penalty
 	else:
+		outcome.result = Outcome.Result.LOSS
 		outcome.time += time_penalty
 	
 	return outcome

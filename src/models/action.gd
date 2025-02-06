@@ -17,13 +17,8 @@ func _init(p_type: Type, p_value: ElementValue):
 	value = p_value
 
 
-func attack_value(armors: Array[ElementValue]) -> int:
-	var attack = 1 if type == Type.MOVE else value.value
-	var valid_armor: Array[ElementValue] = armors.filter(
-		func(armor: ElementValue): return armor.element == value.element)
-	if not valid_armor.is_empty():
-		attack = max(0, attack - valid_armor[0].value)
-	return attack
+func attack_value() -> int:
+	return 1 if type == Type.MOVE else value.value
 
 
 func move_value() -> int:

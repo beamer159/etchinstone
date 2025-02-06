@@ -7,8 +7,7 @@ signal sig2
 
 func create_action_set(powers: Array[Level]) -> ActionSet:
 	sig1.emit(powers)
-	await sig2
-	return null
+	return await sig2
 
 
 func choose_downgrades(powers: Array[Level], damage: ElementValue,) -> Array[Level]:

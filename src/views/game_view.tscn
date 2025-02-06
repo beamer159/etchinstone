@@ -30,6 +30,11 @@ size_flags_vertical = 3
 size_flags_stretch_ratio = 2.0
 columns = 2
 
+[node name="BoostAction" type="CheckButton" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+text = "Boost Initiative / Boost Action"
+
 [node name="Selection" type="LineEdit" parent="VBoxContainer"]
 layout_mode = 2
 

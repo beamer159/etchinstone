@@ -12,7 +12,7 @@ enum Ability {
 var health: int
 var initiative: int
 var attack: ElementValue
-var armor: Array[ElementValue]
+var armors: Array[ElementValue]
 var ability: Array[Ability]
 
 func _init(
@@ -20,14 +20,14 @@ func _init(
 		p_health: int,
 		p_initiative: int,
 		p_attack: ElementValue,
-		p_armor: Array[ElementValue],
+		p_armors: Array[ElementValue],
 		p_experience: int,
 		p_ability: Array[Ability]) -> void:
 	id = p_id
 	health = p_health
 	initiative = p_initiative
 	attack = p_attack
-	armor = p_armor
+	armors = p_armors
 	experience = p_experience
 	ability = p_ability
 
@@ -35,20 +35,21 @@ func _init(
 func resolve(action_set: ActionSet) -> Outcome:
 	var outcome := Outcome.new()
 	outcome.damage = ElementValue.new(attack.element, 0)
+	outcome.initiative = action_set.initiative_value()
 	
-	if initiative > action_set.initiative:
+	if initiative > outcome.initiative:
 		outcome.lost_initiative = true
 		outcome.damage.value += attack.value
 	
-	var attack_value := action_set.action.attack_value(armor)
+	outcome.action_value = action_set.attack_value(armors)
 	
 	@warning_ignore("integer_division")
 	var half_health := (health + 1) / 2
 	
-	if attack_value >= health:
+	if outcome.action_value >= health:
 		outcome.result = Outcome.Result.COMPLETE_VICTORY
 		outcome.experience += experience
-	elif attack_value >= half_health:
+	elif outcome.action_value >= half_health:
 		outcome.result = Outcome.Result.NARROW_VICTORY
 		outcome.experience += experience
 		outcome.damage.value += attack.value

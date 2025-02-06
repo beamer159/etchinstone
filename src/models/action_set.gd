@@ -36,19 +36,42 @@ func _init(
 		leader.leveled().ether_action if ether_action_used()
 		else leader.leveled().neutral_action
 	)
-	used.assign([leader, element, booster].filter(_remove_null))
-	all.assign([leader, element, booster, unused].filter(_remove_null))
+	used.assign([leader, element, booster].filter(_not_null))
+	all.assign([leader, element, booster, unused].filter(_not_null))
 	for power in [leader, element, booster]:
 		if power != null:
 			used.append(power)
 
 
-func _remove_null(variant: Variant) -> bool:
+func _not_null(variant: Variant) -> bool:
 	return variant != null
 
 
 func ether_action_used() -> bool:
 	return leader.leveled().ether_action.value.element == element.leveled().element
+
+
+func initiative_value() -> int:
+	return initiative + (boost if boost_target == BoostTarget.INITIATIVE else 0)
+
+
+func attack_value(armors: Array[ElementValue]) -> int:
+	var attack := action.attack_value()
+	if boost_target == BoostTarget.ACTION:
+		attack += boost
+	for armor in armors:
+		if armor.element == action.value.element:
+			attack -= armor.value
+	return max(0, attack)
+
+
+func move_value(bonus_element: ElementValue.Element) -> int:
+	var move := action.move_value()
+	if boost_target == BoostTarget.ACTION:
+		move += boost
+	if action.value.element == bonus_element:
+		move += unused.leveled().boost
+	return move
 
 
 func max_soak(attack_element: ElementValue.Element) -> int:

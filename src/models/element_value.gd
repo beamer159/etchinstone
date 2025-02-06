@@ -16,9 +16,5 @@ func _init(p_element: Element, p_value: int):
 	value = p_value
 
 
-func clone() -> ElementValue:
-	return ElementValue.new(element, value)
-
-
 func _to_string() -> String:
 	return str(ElementValue.Element.keys()[element], " ", value)

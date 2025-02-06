@@ -3,7 +3,7 @@ class_name Game extends RefCounted
 
 var player := Player.new()
 var powers: Array[Level]
-var hand: Array[Level]
+var hand: Array[Level] = []
 var discard: Array[Level] = []
 var encounter: Encounter
 
@@ -26,12 +26,11 @@ func dragon_era():
 
 
 func resolve_region(region: Region):
-	var hand: Array[Level] = []
 	while powers.size() >= 5 - hand.size():
-		await resolve_round(hand, region)
+		await resolve_round(region)
 
 
-func resolve_round(hand: Array[Level], region: Region):
+func resolve_round(region: Region):
 	for __ in 4 - hand.size():
 		hand.append(powers.pop_back())
 	encounter = region.get_encounter(powers.back().leveled())
@@ -42,7 +41,7 @@ func resolve_round(hand: Array[Level], region: Region):
 	var powers_discard_count = min(powers.size(), outcome.time)
 	for __ in powers_discard_count:
 		discard.append(powers.pop_back())
-	outcome.damage += outcome.time - powers_discard_count
+	outcome.damage.value += outcome.time - powers_discard_count
 	if action_set.max_soak(outcome.damage.element) < outcome.damage.value:
 		to_downgrade = action_set.all
 		to_discard = action_set.all
