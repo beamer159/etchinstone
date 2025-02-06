@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://betsvosq307p6"]
 
 [ext_resource type="Script" path="res://src/views/game_view.gd" id="1_nskcf"]
-[ext_resource type="PackedScene" uid="uid://bfgp0kab2n7s3" path="res://src/views/enemy_view.tscn" id="2_yct4r"]
+[ext_resource type="PackedScene" uid="uid://bfgp0kab2n7s3" path="res://src/views/encounter_view.tscn" id="2_yct4r"]
 
 [node name="GameView" type="MarginContainer"]
 anchors_preset = 15
@@ -9,12 +9,16 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 32
+theme_override_constants/margin_top = 32
+theme_override_constants/margin_right = 32
+theme_override_constants/margin_bottom = 32
 script = ExtResource("1_nskcf")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Enemy" parent="VBoxContainer" instance=ExtResource("2_yct4r")]
+[node name="Encounter" parent="VBoxContainer" instance=ExtResource("2_yct4r")]
 unique_name_in_owner = true
 layout_mode = 2
 sheet_size = Vector2i(4, 4)
@@ -23,4 +27,10 @@ sheet_size = Vector2i(4, 4)
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
 columns = 2
+
+[node name="Selection" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+
+[connection signal="text_submitted" from="VBoxContainer/Selection" to="." method="_on_selection_text_submitted"]

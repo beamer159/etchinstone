@@ -1,22 +1,21 @@
-class_name EncounterView extends MarginContainer
+class_name EncounterView extends SpritesheetView
 
 
-var encounter: Encounter
+var encounter: Encounter:
+	set(value):
+		encounter = value
+		texture.atlas = (
+			preload("res://images/enemies.tres") if encounter is Enemy
+			else preload("res://images/journies.tres"))
+		set_region(SpritesheetLookup.get_encounter_coordinates(encounter))
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready() -> void:
-	var file = FileAccess.get_file_as_string("res://images/encounters.json")
-	var dic = JSON.parse_string(file)
-	var coordinates = dic[power.id]
-	var sheet: Texture2D = texture.atlas
-	@warning_ignore("integer_division")
-	var width = sheet.get_width() / 8
-	@warning_ignore("integer_division")
-	var height = sheet.get_height() / 8
-	texture.region = Rect2(coordinates.x * width, coordinates.y * height, width, height)
+static func create(p_encounter: Encounter) -> EncounterView:
+	var encounter_view := preload("res://src/views/encounter_view.tscn").instantiate()
+	encounter_view._create(p_encounter)
+	return encounter_view
 
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func _create(p_encounter: Enemy) -> void:
+	sheet_size = Vector2i(4, 4)
+	encounter = p_encounter

@@ -34,10 +34,11 @@ func _init(
 
 func resolve(action_set: ActionSet) -> Outcome:
 	var outcome := Outcome.new()
-	outcome.damage_type = attack.element
+	outcome.damage = ElementValue.new(attack.element, 0)
 	
 	if initiative > action_set.initiative:
-		outcome.damage += attack.value
+		outcome.lost_initiative = true
+		outcome.damage.value += attack.value
 	
 	var attack_value := action_set.action.attack_value(armor)
 	
@@ -45,11 +46,14 @@ func resolve(action_set: ActionSet) -> Outcome:
 	var half_health := (health + 1) / 2
 	
 	if attack_value >= health:
+		outcome.result = Outcome.Result.COMPLETE_VICTORY
 		outcome.experience += experience
 	elif attack_value >= half_health:
+		outcome.result = Outcome.Result.NARROW_VICTORY
 		outcome.experience += experience
-		outcome.damage += attack.value
+		outcome.damage.value += attack.value
 	else:
-		outcome.damage += attack.value
+		outcome.result = Outcome.Result.LOSS
+		outcome.damage.value += attack.value
 	
 	return outcome

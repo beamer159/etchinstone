@@ -11,10 +11,7 @@ func create_action_set(powers: Array[Level]) -> ActionSet:
 	return null
 
 
-func choose_downgrades(
-		powers: Array[Level],
-		damage: int,
-		attack_element: ElementValue.Element) -> Array[Level]:
+func choose_downgrades(powers: Array[Level], damage: ElementValue,) -> Array[Level]:
 	return [powers[0], powers[1]]
 
 func upgrade(powers: Array[Level], experience: int) -> void:

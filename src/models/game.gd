@@ -3,6 +3,7 @@ class_name Game extends RefCounted
 
 var player := Player.new()
 var powers: Array[Level]
+var hand: Array[Level]
 var discard: Array[Level] = []
 var encounter: Encounter
 
@@ -42,11 +43,11 @@ func resolve_round(hand: Array[Level], region: Region):
 	for __ in powers_discard_count:
 		discard.append(powers.pop_back())
 	outcome.damage += outcome.time - powers_discard_count
-	if action_set.max_soak(outcome.damage_type) < outcome.damage:
+	if action_set.max_soak(outcome.damage.element) < outcome.damage.value:
 		to_downgrade = action_set.all
 		to_discard = action_set.all
 	else:
-		to_downgrade = player.choose_downgrades(action_set.all, outcome.damage, outcome.damage_type)
+		to_downgrade = player.choose_downgrades(action_set.all, outcome.damage)
 		to_discard = action_set.used
 	for power: Level in to_discard:
 		hand.erase(power)
