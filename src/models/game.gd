@@ -45,8 +45,8 @@ func resolve_round(region: Region):
 	if action_set.max_soak(outcome.damage.element) < outcome.damage.value:
 		to_downgrade = action_set.all
 		to_discard = action_set.all
-	else:
-		to_downgrade = player.choose_downgrades(action_set.all, outcome.damage)
+	elif outcome.damage.value > 0:
+		to_downgrade = await player.choose_downgrades(action_set.all, outcome.damage)
 		to_discard = action_set.used
 	for power: Level in to_discard:
 		hand.erase(power)
